@@ -1,0 +1,153 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/upload.js"></script>
+    <script src="../js/state.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">PJ2</a>
+        </div>
+        <div>
+            <!--向左对齐-->
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="search.html">Search</a></li>
+            </ul>
+
+
+            <!--向右对齐-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        My Account <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" id="userCenter">
+
+                        <li class="divider" ></li>
+                        <li><a href="#">Upload</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">My Photos</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">My Favorite</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Log in</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div>
+    <form class="form-horizontal col-sm-offset-3 col-md-offset-3" id="login_form" action="../php/upload.php" method="post" enctype="multipart/form-data" onsubmit=" return check_submit();">
+
+        <div class="col-sm-9 col-md-9">
+            <div class="form-group" id="imgDiv">
+                <img class="fileinput-preview fileinput-exists thumbnail" id="preview" style="position:center;width: 400px; height: 250px;">
+            </div>
+
+
+
+            <div class="form-group">
+
+                <input type="file" accept="image/*" id="file" onchange="renderImg()">
+
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" id="titleName" name="titleName" placeholder="">
+                <br>
+                <label >Description</label>
+                <input type="text" class="form-control" id="imgDes" name="imgDes" placeholder="">
+                <br>
+            </div>
+            <div class="form-group">
+
+                <label>Theme</label>
+                <select class="form-control" id="selTheme" name="selTheme">
+                    <option  value="Default1" >Select by Content</option>
+                    <option value="scenery">Scenery</option>
+                    <option value="city">City</option>
+                    <option value="people">People</option>
+                    <option value="animal">Animal</option>
+                    <option value="building">Building</option>
+                    <option value="wonder">Wonder</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <label  >Country</label>
+                <select class="form-control" id="selCountry" name="selCountry">
+                    <option value="notSelected" >Select by Country</option>
+                </select>
+                <br>
+                <label >City</label>
+                <select class="form-control "  id="selCity" name="selCity">
+                    <option  value="notSelected" >Select by City</option>
+                </select>
+                <br>
+
+                <div hidden="hidden">
+                    <!--用户ID-->
+                    <input type="text" value="userIDxxx" name="userID" id="userID">
+                    <!--图片ID-->
+                    <input type="text" value="imageIDxxx" name="imgID" id="imgID">
+                    <!--是否有上传图片-->
+                    <input type="text" value="false" name="ifhasImgFile" id="ifhasImgFile">
+                    <input type="text" value="" name="noFilePath" id="noFilePath">
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default" id="submitBtm">Upload</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</div>
+<script>
+    // var fileDom = document.getElementById("file");
+    // var previewDom = document.getElementById("preview");
+    // fileDom.addEventListener("change", e=>{
+    //     var file = fileDom.files[0];
+    //     // check if input contains a valid image file
+    //     if (!file || file.type.indexOf("image/") < 0) {
+    //         fileDom.value = "";
+    //         previewDom.php = "";
+    //         return;
+    //     }
+    //
+    //     // use FileReader to load image and show preview of the image
+    //     var fileReader = new FileReader();
+    //     fileReader.onload = e=>{
+    //         previewDom.php = e.target.result;
+    //     };
+    //     fileReader.readAsDataURL(file);
+    // });
+
+
+
+</script>
+<footer class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid">
+        16302010046
+
+        All Rights Reversed
+
+        Copyright xxxxxxx
+    </div>
+</footer>
+
+</body>
+</html>
